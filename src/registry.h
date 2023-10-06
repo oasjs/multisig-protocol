@@ -18,6 +18,11 @@ class Registry
 private:
     map<string, User*> users;
 
+    /**
+     * @brief Loads a user's certificate from a p12 file.
+     */
+    bool loadUser(string userName, string password);
+
 public:
     Registry();
 
@@ -49,11 +54,6 @@ public:
      * @brief Loads the users' certificates from p12 files.
      */
     void loadUserNames();
-
-    /**
-     * @brief Loads a user's certificate from a p12 file.
-     */
-    bool loadUser(string userName, string password);
 
 };
 
