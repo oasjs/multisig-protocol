@@ -23,7 +23,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 TMP_DIR = tmp
 DATA_DIR = data
-CERTAUTH_DIR = $(DATA_DIR)/certAuth
+CERTAUTH_DIR = $(DATA_DIR)/certauth
 USERS_DIR = $(DATA_DIR)/users
 
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
@@ -52,4 +52,4 @@ install:
 	mkdir -p $(OBJ_DIR) $(TMP_DIR) $(CERTAUTH_DIR) $(USERS_DIR)
 
 run:
-	./$(TARGET)
+	./$(NAME)

@@ -62,5 +62,5 @@ RUN mkdir /home/labsec/challenge/ \
     && mkdir tmp \
     && mkdir data \
     && cd data \
-    && mkdir certAuth \
+    && mkdir certauth \
     && mkdir users
