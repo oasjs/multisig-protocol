@@ -29,7 +29,7 @@ USERS_DIR = $(DATA_DIR)/users
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
 OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
 
-TARGET = challenge.out
+TARGET = multisig.out
 
 ########### AUX TARGETS ##############################
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
@@ -50,3 +50,6 @@ clean:
 
 install:
 	mkdir -p $(OBJ_DIR) $(TMP_DIR) $(CERTAUTH_DIR) $(USERS_DIR)
+
+run:
+	./$(TARGET)
