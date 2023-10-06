@@ -58,9 +58,4 @@ RUN mkdir /home/labsec/challenge/ \
     && cd /home/labsec/challenge/ \
     && git clone https://github.com/oasjs/multisig-protocol.git \
     && cd multisig-protocol \
-    && mkdir obj \
-    && mkdir tmp \
-    && mkdir data \
-    && cd data \
-    && mkdir certauth \
-    && mkdir users
+    && make install
