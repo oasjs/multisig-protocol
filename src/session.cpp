@@ -17,8 +17,7 @@ Session::Session(
         sessionName(sessionName),
         filename(filename),
         password(password),
-        numOfSigners(numOfSigners),
-        isClosed(false) {}
+        numOfSigners(numOfSigners) {}
 
 Session::~Session()
 {

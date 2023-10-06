@@ -28,8 +28,6 @@ private:
     ByteArray hashedText;
     map<User*, ByteArray> signatures;
 
-    bool isClosed;
-
     /**
      * @brief Reads the PDF file to be signed and stores its text content.
      * 
