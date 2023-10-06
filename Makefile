@@ -21,6 +21,10 @@ INCLUDES = -I$(OPENSSL_INCLUDEDIR) -I$(LIBCRYPTOSEC_INCLUDEDIR) -I$(LIBP11_INCLU
 ########### OBJECTS ##################################
 SRC_DIR = src
 OBJ_DIR = obj
+TMP_DIR = tmp
+DATA_DIR = data
+CERTAUTH_DIR = $(DATA_DIR)/certAuth
+USERS_DIR = $(DATA_DIR)/users
 
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
 OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
@@ -39,8 +43,10 @@ $(TARGET): $(OBJS)
 
 all: $(TARGET)
 
-TMP_DIR = tmp
+.PHONY: clean install
 
 clean:
 	rm -f $(OBJ_DIR)/*.o $(TMP_DIR)/*.txt $(TARGET)
 
+install:
+	mkdir -p $(OBJ_DIR) $(TMP_DIR) $(CERTAUTH_DIR) $(USERS_DIR)
