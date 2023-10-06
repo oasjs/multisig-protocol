@@ -1,5 +1,5 @@
 ############# CC FLAGS ###############################
-NAME = challenge.out
+NAME = multisig.out
 CC = g++
 CPPFLAGS = -g -std=c++11
 DEFS = -DFIPS
@@ -29,19 +29,15 @@ USERS_DIR = $(DATA_DIR)/users
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
 OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
 
-TARGET = multisig.out
-
 ########### AUX TARGETS ##############################
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CC) $(CPPFLAGS) $(DEFS) $(INCLUDES) -O0 -Wall -c -o "$@" "$<"
 
-$(TARGET): $(OBJS)
+$(NAME): $(OBJS)
 	$(CC) $(CPPFLAGS) $(DEFS) -o $(NAME) $(OBJS) $(LIBS)
 	@echo 'Build complete!'
 
 ########### TARGETS ##################################
-
-all: $(TARGET)
 
 .PHONY: clean install
 
